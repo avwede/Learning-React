@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 
+const centerVert = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    height: '250px',
+}
+
 const Counter = () => {
     const [count, setCount] = useState(0);
-    const [song, setSong] = useState();
+    const [song, setSong] = useState(" ");
 
     const addToSong = () => {
         setCount(count + 1);
@@ -17,26 +25,23 @@ const Counter = () => {
             setSong("It's");
         }
         else if (count === 2) {
-            setSong("It's Peanut")
+            setSong(song + " Peanut")
         }
         else if (count === 3) {
-            setSong("It's Peanut Butter")
+            setSong(song + " Butter")
         }
         else if (count === 4) {
-            setSong("It's Peanut Butter Jelly")
+            setSong(song + " Jelly")
         }
         else if (count === 5) {
-            setSong("It's Peanut Butter Jelly Time")
+            setSong(song + " Time")
         }
     }
     
     return(
-        <div> 
-            <h1>
-                {/* <p>Clicked {count} times</p> */}
-                <Button variant='outlined' onClick={addToSong}>GO</Button>
-                <p>{song}</p>
-            </h1>
+        <div style={centerVert}> 
+            <Button variant='outlined' onClick={addToSong}>GO</Button>
+            <p>{song}</p>
         </div>
     );
 };

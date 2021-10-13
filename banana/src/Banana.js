@@ -6,6 +6,10 @@ const Banana = () => {
     const center = {
         justifyContent: 'center',
         alignItems: 'center',
+        display: 'flex',
+        width: '100%',
+        height: '100%',
+        flexDirection: 'column'
     }
 
     return(
