@@ -15,7 +15,7 @@ const Banana = () => {
     return(
         <div style={center}> 
             <img src={pbjTime} alt="It's Peanut Butter Jelly Time"/>
-            <h2><Counter /></h2>
+            <h1><Counter sentence="It's Peanut Butter Jelly Time!" /></h1>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 
 const centerVert = {
@@ -6,35 +6,27 @@ const centerVert = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    height: '250px',
+    height: '3em',
 }
 
-const Counter = () => {
+let splitString;
+
+const Counter = ({ sentence }) => {
     const [count, setCount] = useState(0);
-    const [song, setSong] = useState(" ");
+    const [song, setSong] = useState("");
+
+    useEffect(() => {
+        splitString = sentence.split(" ");
+    }, [])
 
     const addToSong = () => {
-        setCount(count + 1);
-
-        if (count > 5){
+        if (count >= splitString.length) {
             setSong("");
             setCount(0);
-        }
-
-        if (count === 1) {
-            setSong("It's");
-        }
-        else if (count === 2) {
-            setSong(song + " Peanut")
-        }
-        else if (count === 3) {
-            setSong(song + " Butter")
-        }
-        else if (count === 4) {
-            setSong(song + " Jelly")
-        }
-        else if (count === 5) {
-            setSong(song + " Time")
+        } 
+        else {
+            setSong(song + splitString[count] + ' ');
+            setCount(count + 1);
         }
     }
     
