@@ -9,7 +9,8 @@ const Banana = () => {
         display: 'flex',
         width: '100%',
         height: '100%',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        backgroundColor: 'lightyellow',
     }
 
     return(
